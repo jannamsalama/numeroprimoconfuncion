@@ -1,0 +1,41 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package numeroprimo;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author JANNAM
+ */
+public class NumeroPrimo {  
+    
+    static boolean primo(int entradaNumero){
+        boolean primo=true;
+            
+            for (int i=2; i<=entradaNumero/2 && primo==true; i++){
+                if (entradaNumero%i==0) {
+                    primo=false;
+                }
+            }
+         return primo;
+}
+        
+    public static void main(String[] args) {
+        // TODO code application logic here
+        boolean retorno;
+        int numero;
+        do{ 
+            System.out.println("Por favor digite un numero:");
+            Scanner sc=new Scanner (System.in);
+            numero=Integer.parseInt(sc.nextLine());
+            retorno=primo(numero);
+            if (retorno==true)
+                System.out.println("Es un numero es primo ");
+            else
+                System.out.println("No es un numero primo ");
+        }while (numero>0);
+    }
+}
